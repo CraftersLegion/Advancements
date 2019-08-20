@@ -16,6 +16,9 @@ AdvancementsInit:
     - advancement "id:first_download" "parent:hub" "icon:written_book" "title:<&d>A Step in the Right Direction" "description:<&f>Download the network resource pack for the first time." "announce:false" "toast:true" "x:2"
     
     - advancement "id:first_swim" "parent:hub" "icon:pufferfish_bucket" "title:<&3>Do You Feel Moist?" "description:<&f>Take a swim in the Hub waters to explore the hidden depths." "announce:false" "toast:true" "x:2" "y:-1"
+    - advancement "id:pat_turtle" "parent:first_swim" "icon:turtle_egg" "title:<&2>A Shell of A Friend" "description:<&f>Find and pat a turtle inside the Hub" "announce:false" "toast:true" "x:1"
+    - advancement "id:undersea_temple" "parent:first_swim" "icon:nether_star" "title:<&6>Shhh It<&sq>s a Secret" "description:<&f>Find out where the tunnels go." "announce:false" "toast:true" "x:3" "y:-2"
+    - advancement "id:new_dimension" "parent:undersea_temple" "icon:prismarine_shard" "title:<&4>Locked" "description:<&f>Something strange can be heard coming from beneath the Hub." "announce:false" "toast:true" "x:4" "y:-2"
     
     - advancement "id:first_visit_community_spawn" "parent:hub" "icon:player_head" "title:<&b>In Time of Need" "description:<&f>Visit the Hub community centre for the first time." "announce:false" "toast:true" "x:2" "y:2"
     - advancement "id:first_visit_cosmetic_shop" "parent:hub" "icon:jack_o_lantern" "title:<&d>Work Your Stuff" "description:<&f>Visit the cosmetic shop inside the frozen sector of the Hub." "announce:false" "toast:true" "x:1" "y:2"
