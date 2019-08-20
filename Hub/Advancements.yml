@@ -1,0 +1,35 @@
+AdvancementsInit:
+    type: task
+    debug: false
+    script:
+    # Create New File if Doesn't Exist
+    - if !<server.has_file[data/players/advancements.yml]>:
+        - yaml create id:advancements
+        - yaml savefile:data/players/advancements.yml id:advancements
+    # Load Old One If Already Exists
+    - else:
+        - yaml load:data/players/advancements.yml id:advancements
+        
+    # Setup Advancements
+    - advancement "id:hub" "icon:clock" "title:<&3>Haven Hub" "description:<&f>Where your story begins." "x:1" "announce:false" "toast:false"
+    
+    - advancement "id:first_download" "parent:hub" "icon:written_book" "title:<&d>A Step in the Right Direction" "description:<&f>Download the network resource pack for the first time." "announce:false" "toast:true" "x:2"
+    
+    - advancement "id:first_swim" "parent:hub" "icon:pufferfish_bucket" "title:<&3>Do You Feel Moist?" "description:<&f>Take a swim in the Hub waters to explore the hidden depths." "announce:false" "toast:true" "x:2" "y:-1"
+    
+    - advancement "id:first_visit_community_spawn" "parent:hub" "icon:player_head" "title:<&b>In Time of Need" "description:<&f>Visit the Hub community centre for the first time." "announce:false" "toast:true" "x:2" "y:2"
+    - advancement "id:first_visit_cosmetic_shop" "parent:hub" "icon:jack_o_lantern" "title:<&d>Work Your Stuff" "description:<&f>Visit the cosmetic shop inside the frozen sector of the Hub." "announce:false" "toast:true" "x:1" "y:2"
+    - advancement "id:first_visit_pet_shop" "parent:hub" "icon:skeleton_skull" "title:<&a>Find a Friend" "description:<&f>Check out the pet shop inside the desert sector of the Hub." "announce:false" "toast:true" "x:0" "y:2"
+
+AdvancementsEvents:
+    type: world
+    debug: false
+    events:
+    
+        on server preload:
+        - inject AdvancementsInit
+        on reload scripts:
+        - inject AdvancementsInit
+        
+        on player joins:
+        - advancement "id:hub" "grant:<player>" "announce:false" "toast:false"
